@@ -1,0 +1,226 @@
+.ticket-container {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ticket-container .card {
+  background: linear-gradient(to bottom, #f01919 0%, #c81605 26%, #a81100 100%);
+  height: 14em;
+  float: left;
+  
+  position: relative;
+}
+
+.ticket-container .card-left {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 24em;
+}
+
+.ticket-container .card-right {
+  width: 9.5em;
+  border-left: 0.18em dashed #fff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-container .card-left {
+  width: 28em;
+}
+
+.ticket-container .card-right:before,
+.ticket-container .card-right:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.9em;
+  height: 0.9em;
+  background: #ffffff;
+  border-radius: 50%;
+  left: -0.5em;
+}
+
+.ticket-container .card-right::after {
+  bottom: -0.1em;
+}
+
+.ticket-container .card-right::before {
+  top: -0.4em;
+}
+
+.ticket-container h1 {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 0.5em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.ticket-container h1 span {
+  font-size: 0.9em;
+  color: black;
+  display: block;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
+.ticket-container .title,
+.ticket-container .name,
+.ticket-container .seat,
+.ticket-container .time {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.ticket-container .title h2,
+.ticket-container .name h2,
+.ticket-container .seat h2,
+.ticket-container .time h2 {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.ticket-container .title span,
+.ticket-container .name span,
+.ticket-container .seat span,
+.ticket-container .time span {
+  font-size: 0.9em;
+  color: black;
+  display: block;
+  font-weight: 600;
+  margin-top: 0.5em;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1px;
+  animation: typewriter 1s steps(20) 1s infinite alternate-reverse;
+}
+
+.ticket-container .title {
+  margin-top: 2em;
+}
+
+.ticket-container .name,
+.ticket-container .seat {
+  margin-top: 2em;
+}
+
+.ticket-container .time {
+  margin: 3em auto;
+  width: 100%;
+}
+
+.ticket-container .eye {
+  position: relative;
+  width: 2em;
+  height: 1.5em;
+  background: #f01919;
+  border-radius: 1em/0.6em;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.ticket-container .eye:before,
+.ticket-container .eye:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
+
+.ticket-container .eye:before {
+  width: 1em;
+  height: 1em;
+  background: #fff;
+  z-index: 2;
+  left: 8px;
+  top: 4px;
+}
+
+.ticket-container .eye:after {
+  width: 0.5em;
+  height: 0.5em;
+  background: #fff;
+  z-index: 3;
+  left: 12px;
+  top: 8px;
+}
+
+.ticket-container .number {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ticket-container .number h3 {
+  font-size: 2.5em;
+  margin-top: 0.9em;
+  color: #3dcee8;
+}
+
+.ticket-container .number span {
+  display: block;
+  color: black;
+}
+
+.ticket-container .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.ticket-container .button-container button {
+  background-color: #3dcee8;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-container .button-container button:hover {
+  background-color: #36b5d1;
+}
+
+
+
+
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.contact-info {
+  width: 100%;
+}
+
+.contact-info h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+

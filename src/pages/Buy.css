@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* for smaller screen */
+@media (max-width: 768px) {
+  .parent {
+    flex-direction: column;
+  }
+  .child1 {
+    margin-right: 0;
+  }
+  .child2 {
+    margin-top: 24px;
+  }
+  .child2 p {
+    margin: 0;
+  }
+  .child2 .info {
+    margin-top: 0;
+  }
+  .child2 .info .count {
+    margin-right: 0;
+  }
+  .child2 .info .total {
+    margin-left: 6px;
+  }
+  .child2 .ticket-button {
+    margin-top: 0;
+  }
+  .child2 .total-amount {
+    margin-top: 0;
+  }
+}
+/* for larger screen */
+@media (min-width: 769px) {
+  .parent {
+    flex-direction: row;
+  }
+  .child1 {
+    margin-right: 30px;
+  }
+  .child2 {
+    margin-top: 0;
+  }
+  .child2 p {
+    margin: 8px 0;
+  }
+  .child2 .info {
+    margin-top: 12px;
+  }
+  .child2 .info .count {
+    margin-right: 6px;
+  }
+  .child2 .info .total {
+    margin-left: 0;
+  }
+  .child2 .ticket-button {
+    margin-top: 16px;
+  }
+  .child2 .total-amount {
+    margin-top: 16px;
+  }
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  background-color: #f5f5f5;
+  color: #7e7e7e;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  display: flex;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+}
+.seat.occupied {
+  background-color: red;
+  cursor: not-allowed;
+}
+
+.child1 {
+  width: 100%;
+  margin-right: 30px;
+}
+
+.child2 {
+  width: 100%;
+}
+
+.Movies {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.Movies select {
+  appearance: none;
+  background: white;
+  color: black;
+  font-size: 14px;
+  margin-left: 12px;
+  border-radius: 4px;
+  padding: 6px 24px;
+}
+
+.ShowCase {
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #3b3b3b;
+  padding: 12px;
+  border-radius: 4px;
+  color: #7e7e7e;
+}
+
+.ShowCase li {
+  margin: 0 12px;
+}
+
+.Cinema {
+  margin-bottom: 18px;
+  perspective: 400px;
+  display: grid;
+  place-items: left;
+  grid-gap: 24px;
+}
+
+.Cinema .screen {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.345);
+  width: 100%;
+  transform: rotateX(-30deg) scale(1.1);
+  box-shadow: 0 3px 10px 2px;
+  animation: screenAnimation 6s ease-in-out infinite;
+}
+
+.seat.selected {
+  background-color: green; /* Selected seats turn green */
+  color: white;
+}
+
+.seat.occupied {
+  background-color: red; /* Occupied seats turn red */
+  color: white; /* Text color inside the occupied seat */
+  cursor: not-allowed; /* Shows 'disabled' cursor on hover */
+}
+
+.seat.disabled {
+  opacity: 0.6; /* Slightly faded for disabled seats */
+  cursor: not-allowed;
+}
+
+@keyframes screenAnimation {
+  0% {
+    transform: rotateX(-20deg) scale(1.1);
+  }
+  50% {
+    transform: rotateX(-10deg) scale(1.2);
+  }
+  100% {
+    transform: rotateX(-20deg) scale(1.1);
+  }
+}
+
+.Cinema .seats {
+  display: grid;
+  grid-gap: 15px;
+  width: 100%;
+  grid-template-columns: repeat(8, min-content);
+  justify-content: center;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 2) {
+  margin-right: 12px;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 6) {
+  margin-right: 12px;
+}
+
+.seatno {
+  margin-right: 10px;
+}
+
+.Cinema .seats .seat:not(.occupied):hover,
+.Cinema .seats .seat:not(.occupied):focus {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.Cinema .seats .seat.selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: transparent;
+  border: 1px solid #7bc47f;
+  animation: show-off 0.8s;
+  visibility: hidden;
+}
+
+@keyframes show-off {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.seat {
+  display: inline-block;
+  background: #626262;
+  width: 16px;
+  height: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  top: 1px;
+}
+
+.seat.selected {
+  background: #7bc47f !important;
+}
+
+.seat.occupied {
+  background: red;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.info .count {
+  color: #7bc47f;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.info .total {
+  color: #7bc47f;
+  font-weight: bold;
+}
+
+.selected-tickets-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.selected-tickets-list li {
+  margin-bottom: 8px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.ticket-button {
+  margin-top: 16px;
+}
+
+.ticket-button button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ticket-button button:hover {
+  background-color: #0056b3;
+}
+
+.ticket-button button:focus {
+  outline: none;
+}
+
+.total-amount {
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.child2 p {
+  margin: 8px 0;
+}
